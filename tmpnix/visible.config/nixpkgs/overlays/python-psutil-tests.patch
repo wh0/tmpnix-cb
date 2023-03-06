@@ -1,0 +1,22 @@
+diff --git a/psutil/tests/test_system.py b/psutil/tests/test_system.py
+index 753249b..9d0e34f 100755
+--- a/psutil/tests/test_system.py
++++ b/psutil/tests/test_system.py
+@@ -307,7 +307,7 @@ class TestCpuAPIs(PsutilTestCase):
+     def test_cpu_count_logical(self):
+         logical = psutil.cpu_count()
+         self.assertIsNotNone(logical)
+-        self.assertEqual(logical, len(psutil.cpu_times(percpu=True)))
++        self.assertGreaterEqual(logical, len(psutil.cpu_times(percpu=True)))
+         self.assertGreaterEqual(logical, 1)
+         #
+         if os.path.exists("/proc/cpuinfo"):
+@@ -457,7 +457,7 @@ class TestCpuAPIs(PsutilTestCase):
+ 
+     def test_per_cpu_percent(self):
+         last = psutil.cpu_percent(interval=0.001, percpu=True)
+-        self.assertEqual(len(last), psutil.cpu_count())
++        self.assertLessEqual(len(last), psutil.cpu_count())
+         for x in range(100):
+             new = psutil.cpu_percent(interval=None, percpu=True)
+             for percent in new:

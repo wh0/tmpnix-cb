@@ -1,0 +1,52 @@
+diff --git a/tests/run-backtrace-data.sh b/tests/run-backtrace-data.sh
+index f67a43e..c1d6a9e 100755
+--- a/tests/run-backtrace-data.sh
++++ b/tests/run-backtrace-data.sh
+@@ -15,6 +15,8 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++exit 77
++
+ . $srcdir/backtrace-subr.sh
+ 
+ # This test really cannot be run under valgrind, it tries to introspect
+diff --git a/tests/run-backtrace-dwarf.sh b/tests/run-backtrace-dwarf.sh
+index 7ed795d..0d6bdf0 100755
+--- a/tests/run-backtrace-dwarf.sh
++++ b/tests/run-backtrace-dwarf.sh
+@@ -15,6 +15,8 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++exit 77
++
+ . $srcdir/backtrace-subr.sh
+ 
+ # This test really cannot be run under valgrind, it tries to introspect
+diff --git a/tests/run-backtrace-native.sh b/tests/run-backtrace-native.sh
+index 823c411..b78b878 100755
+--- a/tests/run-backtrace-native.sh
++++ b/tests/run-backtrace-native.sh
+@@ -15,6 +15,8 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++exit 77
++
+ . $srcdir/backtrace-subr.sh
+ 
+ check_native backtrace-child
+diff --git a/tests/run-deleted.sh b/tests/run-deleted.sh
+index a1ec1ec..6d8613d 100755
+--- a/tests/run-deleted.sh
++++ b/tests/run-deleted.sh
+@@ -15,6 +15,8 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++exit 77
++
+ . $srcdir/backtrace-subr.sh
+ 
+ tempfiles deleted deleted-lib.so

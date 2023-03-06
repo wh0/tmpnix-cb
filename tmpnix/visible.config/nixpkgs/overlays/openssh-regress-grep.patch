@@ -1,0 +1,29 @@
+diff --git a/regress/agent-restrict.sh b/regress/agent-restrict.sh
+index a30aed7..5d047b0 100644
+--- a/regress/agent-restrict.sh
++++ b/regress/agent-restrict.sh
+@@ -332,7 +332,7 @@ if test ! -z "\$me" ; then
+ 	cat \$SSH_USER_AUTH
+ fi
+ echo AGENT
+-$SSHADD -L | egrep "^ssh" | cut -d" " -f-2 | sort
++$SSHADD -L | grep -E "^ssh" | cut -d" " -f-2 | sort
+ if test -z "\$next" ; then 
+ 	touch $OBJ/done
+ 	echo "FINISH"
+diff --git a/regress/test-exec.sh b/regress/test-exec.sh
+index c51f8ea..ab74726 100644
+--- a/regress/test-exec.sh
++++ b/regress/test-exec.sh
+@@ -79,6 +79,11 @@ if test "x${EGREP}" != "x"; then
+ }
+ fi
+ 
++fgrep ()
++{
++	grep -F "$@"
++}
++
+ SRC=`dirname ${SCRIPT}`
+ 
+ # defaults

@@ -1,0 +1,10 @@
+!/.config
+/.config/*
+!/.config/nix
+!/.config/nixpkgs
+/.gnupg
+/.lesshst
+/.nix-channels
+/.nix-defexpr
+/.nix-profile
+/.wget-hsts

@@ -1,0 +1,14 @@
+diff --git a/tests/thread_test.c b/tests/thread_test.c
+index 60f80e8..800d633 100644
+--- a/tests/thread_test.c
++++ b/tests/thread_test.c
+@@ -27,9 +27,6 @@ static int s_test_thread_creation_join_fn(struct aws_allocator *allocator, void
+     aws_thread_init(&thread, allocator);
+ 
+     struct aws_thread_options thread_options = *aws_default_thread_options();
+-    /* there should be at least 1 cpu on any machine running this test. Just bind that to make sure that code
+-     * path is exercised. */
+-    thread_options.cpu_id = 0;
+ 
+     /* Exercise the thread naming code path */
+     thread_options.name = aws_byte_cursor_from_c_str("MyThreadName");

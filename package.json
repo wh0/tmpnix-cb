@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "install": ". ~/tmpnix/profile-vars.sh && ~/tmpnix/install.sh && . ~/tmpnix/activate.sh && ./watch-build.sh",
+    "start": "cd greeter && python3 -m http.server $PORT",
+    "build": "true"
+  },
+  "devDependencies": {
+    "glitch-snail": "^2.16.0"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "glitch": {
+    "projectType": "generated_static",
+    "buildDirectory": "greeter"
+  }
+}

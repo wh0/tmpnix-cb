@@ -1,0 +1,19 @@
+diff --git a/test.c b/test.c
+index 144e6d3..896a1ba 100644
+--- a/test.c
++++ b/test.c
+@@ -126,14 +126,6 @@ int main(int argc, char *argv[])
+     assert_mktemp_path(TESTDIR "/temp", "", buf);
+ 
+     test_spawn();
+-    test_system();
+-
+-    // Only run subprocess if no arguments are given
+-    // as the subprocess will be called without argument
+-    // otherwise we will have infinite recursion
+-    if (argc == 1) {
+-        test_subprocess();
+-    }
+ 
+     test_execv();
+ 

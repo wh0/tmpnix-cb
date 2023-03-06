@@ -1,0 +1,22 @@
+diff --git a/sshpty.c b/sshpty.c
+index cae0b97..9284512 100644
+--- a/sshpty.c
++++ b/sshpty.c
+@@ -192,7 +192,7 @@ pty_setowner(struct passwd *pw, const char *tty)
+ 
+ 	if (st.st_uid != pw->pw_uid || st.st_gid != gid) {
+ 		if (chown(tty, pw->pw_uid, gid) == -1) {
+-			if (errno == EROFS &&
++			if ((errno == EROFS || errno == EPERM) &&
+ 			    (st.st_uid == pw->pw_uid || st.st_uid == 0))
+ 				debug("chown(%.100s, %u, %u) failed: %.100s",
+ 				    tty, (u_int)pw->pw_uid, (u_int)gid,
+@@ -206,7 +206,7 @@ pty_setowner(struct passwd *pw, const char *tty)
+ 
+ 	if ((st.st_mode & (S_IRWXU|S_IRWXG|S_IRWXO)) != mode) {
+ 		if (chmod(tty, mode) == -1) {
+-			if (errno == EROFS &&
++			if ((errno == EROFS || errno == EPERM) &&
+ 			    (st.st_mode & (S_IRGRP | S_IROTH)) == 0)
+ 				debug("chmod(%.100s, 0%o) failed: %.100s",
+ 				    tty, (u_int)mode, strerror(errno));

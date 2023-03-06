@@ -1,0 +1,6 @@
+[alias]
+	st = status
+	co = checkout
+[user]
+	name = w
+	email = none
