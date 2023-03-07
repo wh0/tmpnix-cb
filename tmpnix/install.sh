@@ -14,5 +14,6 @@ NIX=/tmp/nix/store/fdwkwanm9dgcb1krcvz9cw1h4yz464yz-nix-2.11.1
 . "$NIX/etc/profile.d/nix.sh"
 
 if ! type nix >&2; then
+  printf >>~/tmpnix/logs/build.txt '\n'
   "$NIX/bin/nix-env" -i "$NIX"
 fi
