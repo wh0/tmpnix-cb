@@ -2,6 +2,7 @@
 /.config/*
 !/.config/nix
 !/.config/nixpkgs
+!/.config/snail
 /.gnupg
 /.lesshst
 /.nix-channels
