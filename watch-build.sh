@@ -1,9 +1,9 @@
 #!/bin/sh -eux
 
-if [ ! -e .data/try ]; then
+if [ ! -e /tmp/try ]; then
   exit 0
 fi
-rm .data/try
+rm /tmp/try
 
 if [ ! -e /tmp/top.txt ]; then
   curl -fo /tmp/top.txt https://tmpnix-gsdrv.glitch.me/top.txt
