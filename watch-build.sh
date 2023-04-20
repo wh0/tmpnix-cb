@@ -1,5 +1,4 @@
 #!/bin/sh -eux
-
 if [ ! -e /tmp/try ]; then
   exit 0
 fi
