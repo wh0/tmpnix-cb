@@ -5,3 +5,5 @@
 [user]
 	name = w
 	email = none
+[merge]
+	conflictStyle = diff3
