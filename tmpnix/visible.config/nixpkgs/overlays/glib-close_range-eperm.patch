@@ -1,22 +1,22 @@
 diff --git a/glib/gspawn.c b/glib/gspawn.c
-index 0a2cbe5..c9fda00 100644
+index bca37da..8652999 100644
 --- a/glib/gspawn.c
 +++ b/glib/gspawn.c
-@@ -1544,7 +1544,7 @@ safe_fdwalk_set_cloexec (int lowfd)
+@@ -1600,7 +1600,7 @@ safe_fdwalk_set_cloexec (int lowfd)
     * fall back to safe_fdwalk(). Handle EINVAL in case `CLOSE_RANGE_CLOEXEC`
     * is not supported. */
-   int ret = close_range (lowfd, G_MAXUINT, CLOSE_RANGE_CLOEXEC);
+   ret = close_range (lowfd, G_MAXUINT, CLOSE_RANGE_CLOEXEC);
 -  if (ret == 0 || !(errno == ENOSYS || errno == EINVAL))
 +  if (ret == 0 || !(errno == ENOSYS || errno == EPERM || errno == EINVAL))
      return ret;
  #endif  /* HAVE_CLOSE_RANGE */
-   return safe_fdwalk (set_cloexec, GINT_TO_POINTER (lowfd));
-@@ -1597,7 +1597,7 @@ safe_closefrom (int lowfd)
+ 
+@@ -1626,7 +1626,7 @@ safe_closefrom (int lowfd)
     * Handle ENOSYS in case it’s supported in libc but not the kernel; if so,
     * fall back to safe_fdwalk(). */
-   int ret = close_range (lowfd, G_MAXUINT, 0);
+   ret = close_range (lowfd, G_MAXUINT, 0);
 -  if (ret == 0 || errno != ENOSYS)
 +  if (ret == 0 || !(errno == ENOSYS || errno == EPERM))
      return ret;
  #endif  /* HAVE_CLOSE_RANGE */
-   return safe_fdwalk (close_func, GINT_TO_POINTER (lowfd));
+ 
