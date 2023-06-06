@@ -3,8 +3,8 @@
 mkdir -p ~/tmpnix/logs
 touch ~/tmpnix/logs/build.txt
 
-NIX_ASSET=https://cdn.glitch.me/e7db9df3-e53f-4dbb-8a80-8c10588888e3/nix-202305b.tar.gz?v=1684558502002
-NIX=/tmp/nix/store/9aanw97gw4sa1kvx078sc7fv0hv9z79c-nix-2.11.1
+NIX_ASSET=https://cdn.glitch.me/e7db9df3-e53f-4dbb-8a80-8c10588888e3/nix-202306a.tar.gz?v=1686025822850
+NIX=/tmp/nix/store/bvrj8yvc3bx98y90r0xfm75pkqvv4pa5-nix-2.13.3
 
 if [ ! -e /tmp/unpacked ]; then
   test ! -e /tmp/nix
