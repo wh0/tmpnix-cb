@@ -7,7 +7,7 @@ if [ ! -e ~/.nix-profile ]; then
   exit 0
 fi
 
-if nix --extra-experimental-features nix-command show-derivation "$DRV_PATH" | grep -q preferLocalBuild; then
+if grep -q preferLocalBuild "$DRV_PATH"; then
   printf >&2 'skipping %s for preferLocalBuild\n' "$DRV_PATH"
   printf >>~/tmpnix/logs/build.txt '%s - %s %s\n' "$(date)" "$DRV_PATH" -
   exit 0
