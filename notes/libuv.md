@@ -1,0 +1,1 @@
+thread affinity test, incompatible
