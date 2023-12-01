@@ -1,13 +1,26 @@
 diff --git a/sysdeps/unix/sysv/linux/clone-internal.c b/sysdeps/unix/sysv/linux/clone-internal.c
-index 979f788..e4cd5c9 100644
+index 790739c..3c4845d 100644
 --- a/sysdeps/unix/sysv/linux/clone-internal.c
 +++ b/sysdeps/unix/sysv/linux/clone-internal.c
-@@ -52,7 +52,7 @@ __clone_internal (struct clone_args *cl_args,
-   /* Try clone3 first.  */
+@@ -106,7 +106,7 @@ __clone_internal (struct clone_args *cl_args,
+ #ifdef HAVE_CLONE3_WRAPPER
    int saved_errno = errno;
-   ret = __clone3 (cl_args, sizeof (*cl_args), func, arg);
+   int ret = __clone3_internal (cl_args, func, arg);
 -  if (ret != -1 || errno != ENOSYS)
 +  if (ret != -1 || !(errno == ENOSYS || errno == EPERM))
      return ret;
  
    /* NB: Restore errno since errno may be checked against non-zero
+diff --git a/sysdeps/unix/sysv/linux/spawni.c b/sysdeps/unix/sysv/linux/spawni.c
+index ec687cb..7cca7fe 100644
+--- a/sysdeps/unix/sysv/linux/spawni.c
++++ b/sysdeps/unix/sysv/linux/spawni.c
+@@ -394,7 +394,7 @@ __spawnix (pid_t * pid, const char *file,
+   new_pid = __clone3 (&clone_args, sizeof (clone_args), __spawni_child,
+ 		      &args);
+   /* clone3 was added in 5.3 and CLONE_CLEAR_SIGHAND in 5.5.  */
+-  if (new_pid == -1 && (errno == ENOSYS || errno == EINVAL))
++  if (new_pid == -1 && (errno == ENOSYS || errno == EPERM || errno == EINVAL))
+ #endif
+     {
+       args.use_clone3 = false;
