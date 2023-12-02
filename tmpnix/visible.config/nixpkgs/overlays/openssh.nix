@@ -8,7 +8,7 @@ self: super:
     ];
     preCheck = old.preCheck + ''
       substituteInPlace regress/*.sh \
-        --replace '#!/bin/sh' '#!${self.stdenv.shell}'
+        --replace '/bin/sh' '${self.stdenv.shell}'
     '';
   });
 }

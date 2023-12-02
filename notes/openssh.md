@@ -63,3 +63,4 @@ patched to give up chown-ing pty on EPERM if things are sane enough
 various edits to tests to avoid /bin/sh, because host /bin/sh is incompatible with libredirect
 - egrep/fgrep uses /bin/sh shebang
 - scripts generated during t-exec had /bin/sh shebang
+- regress/match-subsystem.sh uses involves /bin/sh
