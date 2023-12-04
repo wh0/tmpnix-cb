@@ -16,4 +16,4 @@ fi
 printf >>~/tmpnix/logs/build.txt '%s + %s %s\n' "$(date)" "$DRV_PATH" -
 
 printf >&2 'uploading %s\n' "$DRV_PATH"
-~/tmpnix/upload.sh "$DRV_PATH"
+~/tmpnix/upload.sh "$DRV_PATH^*"
