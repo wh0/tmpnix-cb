@@ -1,0 +1,13 @@
+diff --git a/tests/support/util.tcl b/tests/support/util.tcl
+index 8941d1a..e5e00f8 100644
+--- a/tests/support/util.tcl
++++ b/tests/support/util.tcl
+@@ -624,7 +624,7 @@ proc populate {num {prefix key:} {size 3} {idx 0} {prints false}} {
+ 
+ proc get_child_pid {idx} {
+     set pid [srv $idx pid]
+-    if {[file exists "/usr/bin/pgrep"]} {
++    if {[auto_execok "pgrep"] ne ""} {
+         set fd [open "|pgrep -P $pid" "r"]
+         set child_pid [string trim [lindex [split [read $fd] \n] 0]]
+     } else {
