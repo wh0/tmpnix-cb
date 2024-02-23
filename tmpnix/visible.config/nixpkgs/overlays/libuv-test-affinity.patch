@@ -1,12 +1,12 @@
 diff --git a/test/test-list.h b/test/test-list.h
-index 78ff9c2..cc42986 100644
+index d30f02f..ab679d5 100644
 --- a/test/test-list.h
 +++ b/test/test-list.h
-@@ -1154,7 +1154,6 @@ TASK_LIST_START
+@@ -1171,7 +1171,6 @@ TASK_LIST_START
    TEST_ENTRY  (thread_rwlock_trylock)
    TEST_ENTRY  (thread_create)
    TEST_ENTRY  (thread_equal)
 -  TEST_ENTRY  (thread_affinity)
+   TEST_ENTRY  (thread_priority)
    TEST_ENTRY  (dlerror)
    TEST_ENTRY  (ip4_addr)
-   TEST_ENTRY  (ip6_addr_link_local)
