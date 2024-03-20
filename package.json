@@ -5,7 +5,7 @@
     "build": "true"
   },
   "devDependencies": {
-    "glitch-snail": "^2.16.0"
+    "glitch-snail": "^2.18.0"
   },
   "engines": {
     "node": ">=10"
