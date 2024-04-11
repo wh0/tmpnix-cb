@@ -1,3 +1,3 @@
 #!/bin/sh -eu
 . ~/tmpnix/vars.sh
-~/tmpnix/upload-inner.sh "$@"
+exec "/tmp/out/nix/bin/$@"

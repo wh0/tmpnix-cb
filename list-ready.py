@@ -6,7 +6,7 @@ import subprocess
 with open('/tmp/top.txt', 'r') as top_f:
   top = set(l.strip() for l in top_f)
 realise_dry_run = subprocess.Popen(
-  ['nix-store', '-r', '--dry-run', *top],
+  ['/app/tmpnix/wrapped.sh', 'nix-store', '-r', '--dry-run', *top],
   stderr=subprocess.PIPE,
 )
 to_build = []

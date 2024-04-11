@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "install": ". ~/tmpnix/profile-vars.sh && ~/tmpnix/install.sh && . ~/tmpnix/activate.sh && ./watch-build.sh",
+    "install": "~/install.sh",
     "start": "cd greeter && python3 -m http.server $PORT",
     "build": "true"
   },

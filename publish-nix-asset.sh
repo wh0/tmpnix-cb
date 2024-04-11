@@ -5,7 +5,7 @@ printf 'archive name (e.g. nix-yyyymmx.tar.gz): '
 read name
 set -x
 test ! -e /tmp/pack
-nix --extra-experimental-features nix-command copy --no-check-sigs --to /tmp/pack $paths
+~/tmpnix/wrapped.sh nix --extra-experimental-features nix-command copy --no-check-sigs --to /tmp/pack $paths
 tar -czvf "/tmp/$name" -C /tmp/pack nix
 ls -lh "/tmp/$name"
 snail ot request-join -r -p "$PROJECT_DOMAIN"

@@ -8,5 +8,4 @@
 /.nix-channels
 /.nix-defexpr
 /.nix-profile
-!/.profile
 /.wget-hsts
