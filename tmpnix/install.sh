@@ -1,6 +1,6 @@
 #!/bin/sh -eux
-NIX_ASSET=https://cdn.glitch.me/e7db9df3-e53f-4dbb-8a80-8c10588888e3/nix-202404a.tar.gz?v=1713070408300
-NIX=/tmp/nix/store/2x8jc972p6vrpsn3dg9xkka94s47rpy5-nix-2.18.1
+NIX_ASSET=https://cdn.glitch.me/e7db9df3-e53f-4dbb-8a80-8c10588888e3/nix-202405a.tar.gz?v=1715284377540
+NIX=/tmp/nix/store/fzxz86d0qiw9xpkpqvl7pisn35v3sk47-nix-2.18.1
 
 if [ ! -e /tmp/nix ]; then
   if [ -e /tmp/unpack.tmp ]; then
