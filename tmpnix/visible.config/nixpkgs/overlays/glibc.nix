@@ -8,6 +8,7 @@ self: super:
         sha256 = "0hcqi4j3f897hf1xzqpah6d2xdz7kn7dbbmsbrrk79iliq8qxrgd";
       })
       ./glibc-clone3-eperm.patch
+      ./glibc-fchmodat2-eperm.patch
     ];
   });
 }
