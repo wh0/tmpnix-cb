@@ -1,0 +1,13 @@
+diff --git a/tests/ls/acl.sh b/tests/ls/acl.sh
+index 04213c7..0da2f67 100755
+--- a/tests/ls/acl.sh
++++ b/tests/ls/acl.sh
+@@ -19,7 +19,7 @@
+ . "${srcdir=.}/tests/init.sh"; path_prepend_ ./src
+ print_ver_ ls
+ 
+-require_acl_
++require_setfacl_
+ 
+ # Skip this test if ls was built without ACL support:
+ grep '^#define USE_ACL 1' $CONFIG_HEADER > /dev/null ||
