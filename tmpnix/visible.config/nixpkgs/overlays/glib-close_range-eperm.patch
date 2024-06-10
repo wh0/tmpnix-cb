@@ -1,8 +1,8 @@
-diff --git a/glib/gspawn.c b/glib/gspawn.c
-index bca37da..8652999 100644
---- a/glib/gspawn.c
-+++ b/glib/gspawn.c
-@@ -1600,7 +1600,7 @@ safe_fdwalk_set_cloexec (int lowfd)
+diff --git a/glib/glib-unix.c b/glib/glib-unix.c
+index 7cb76dd..14e93cd 100644
+--- a/glib/glib-unix.c
++++ b/glib/glib-unix.c
+@@ -837,7 +837,7 @@ g_fdwalk_set_cloexec (int lowfd)
     * fall back to safe_fdwalk(). Handle EINVAL in case `CLOSE_RANGE_CLOEXEC`
     * is not supported. */
    ret = close_range (lowfd, G_MAXUINT, CLOSE_RANGE_CLOEXEC);
@@ -11,7 +11,7 @@ index bca37da..8652999 100644
      return ret;
  #endif  /* HAVE_CLOSE_RANGE */
  
-@@ -1626,7 +1626,7 @@ safe_closefrom (int lowfd)
+@@ -884,7 +884,7 @@ g_closefrom (int lowfd)
     * Handle ENOSYS in case it’s supported in libc but not the kernel; if so,
     * fall back to safe_fdwalk(). */
    ret = close_range (lowfd, G_MAXUINT, 0);
