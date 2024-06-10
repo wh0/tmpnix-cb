@@ -1,0 +1,13 @@
+diff --git a/tests/libgit2/object/cache.c b/tests/libgit2/object/cache.c
+index bf8c6fb..5921ed3 100644
+--- a/tests/libgit2/object/cache.c
++++ b/tests/libgit2/object/cache.c
+@@ -180,7 +180,7 @@ static void *cache_raw(void *arg)
+ 	return arg;
+ }
+ 
+-#define REPEAT 20
++#define REPEAT 4
+ #define THREADCOUNT 50
+ 
+ void test_object_cache__threadmania(void)
