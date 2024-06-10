@@ -1,7 +1,7 @@
-diff --git a/tests/build-remote-trustless-should-fail-0.sh b/tests/build-remote-trustless-should-fail-0.sh
+diff --git a/tests/functional/build-remote-trustless-should-fail-0.sh b/tests/functional/build-remote-trustless-should-fail-0.sh
 index fad1def..3d4a4b0 100644
---- a/tests/build-remote-trustless-should-fail-0.sh
-+++ b/tests/build-remote-trustless-should-fail-0.sh
+--- a/tests/functional/build-remote-trustless-should-fail-0.sh
++++ b/tests/functional/build-remote-trustless-should-fail-0.sh
 @@ -4,6 +4,7 @@ enableFeatures "daemon-trust-override"
  
  restartDaemon
