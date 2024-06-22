@@ -1,0 +1,23 @@
+diff --git a/pkgs/stdenv/linux/bootstrap-files/x86_64-unknown-linux-gnu.nix b/pkgs/stdenv/linux/bootstrap-files/x86_64-unknown-linux-gnu.nix
+index 1220397..4f21740 100644
+--- a/pkgs/stdenv/linux/bootstrap-files/x86_64-unknown-linux-gnu.nix
++++ b/pkgs/stdenv/linux/bootstrap-files/x86_64-unknown-linux-gnu.nix
+@@ -10,12 +10,14 @@
+ # - build time: Sat, 10 Feb 2024 01:29:55 +0000
+ {
+   bootstrapTools = import <nix/fetchurl.nix> {
+-    url = "http://tarballs.nixos.org/stdenv/x86_64-unknown-linux-gnu/82b583ba2ba2e5706b35dbe23f31362e62be2a9d/bootstrap-tools.tar.xz";
+-    hash = "sha256-YQlr088HPoVWBU2jpPhpIMyOyoEDZYDw1y60SGGbUM0=";
++    url = "https://cdn.glitch.me/5a9fc653-d4ea-4f87-b41f-2015392bbd4a/bootstrap-202405a%2Fbootstrap-tools.tar.xz?v=1717647991795";
++    hash = "sha256-RQOM6LlxTJ6Ku90HO6Tn8Io/8WF5WAmaWx9GieIjr3U=";
++    name = "bootstrap-tools.tar.xz";
+   };
+   busybox = import <nix/fetchurl.nix> {
+-    url = "http://tarballs.nixos.org/stdenv/x86_64-unknown-linux-gnu/82b583ba2ba2e5706b35dbe23f31362e62be2a9d/busybox";
+-    hash = "sha256-QrTEnQTBM1Y/qV9odq8irZkQSD9uOMbs2Q5NgCvKCNQ=";
++    url = "https://cdn.glitch.global/5a9fc653-d4ea-4f87-b41f-2015392bbd4a/bootstrap-202405a%2Fbusybox?v=1717647953418";
++    hash = "sha256-MmKdaDb9aSmEkxD7KrxYuh5xv6PSWrZURHlLE6cyqm4=";
+     executable = true;
++    name = "busybox";
+   };
+ }
