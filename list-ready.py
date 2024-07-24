@@ -5,16 +5,18 @@ import subprocess
 
 with open('/tmp/top.txt', 'r') as top_f:
   top = set(l.strip() for l in top_f)
-realise_dry_run = subprocess.Popen(
+realise_dry_run = subprocess.run(
   ['/app/tmpnix/wrapped.sh', 'nix-store', '-r', '--dry-run', *top],
-  stderr=subprocess.PIPE,
+  capture_output=True,
+  text=True,
 )
+if realise_dry_run.returncode != 0:
+  raise Exception('realise dry run return code %d, stderr %s' % (realise_dry_run.returncode, realise_dry_run.stderr))
 to_build = []
 to_fetch = []
 unknown = []
 dst = None
-for l in realise_dry_run.stderr:
-  l = str(l, 'utf-8')
+for l in realise_dry_run.stderr.splitlines():
   if 'will be built' in l:
     dst = to_build
   elif 'will be fetched' in l:
@@ -23,9 +25,6 @@ for l in realise_dry_run.stderr:
     dst = unknown
   elif dst is not None:
     dst.append(l.strip())
-realise_dry_run.wait()
-if realise_dry_run.returncode != 0:
-  raise Exception('realise dry run return code %d' % realise_dry_run.returncode)
 to_build_s = set(to_build)
 unknown_s = set(unknown)
 
