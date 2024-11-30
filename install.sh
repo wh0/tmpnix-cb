@@ -1,7 +1,6 @@
 #!/bin/sh -eux
 ./tmpnix/install.sh
 
-mkdir -p /tmp/nix/var/cache/ccache
 mkdir -p ~/tmpnix/logs
 touch ~/tmpnix/logs/build.txt
 
