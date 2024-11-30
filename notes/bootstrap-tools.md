@@ -37,3 +37,5 @@ index e1801ab..909e9e8 100644
 EOF
 
 ~/tmpnix/wrapped.sh nix-instantiate -v . --eval --show-trace -A stdenv.args 2>&1 | less
+
+replaceBootstrapFiles accepted in 24.11
