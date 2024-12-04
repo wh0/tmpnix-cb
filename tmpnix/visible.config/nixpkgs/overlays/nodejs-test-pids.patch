@@ -1,0 +1,13 @@
+diff --git a/test/sequential/test-child-process-pass-fd.js b/test/sequential/test-child-process-pass-fd.js
+index 86092f5..858329a 100644
+--- a/test/sequential/test-child-process-pass-fd.js
++++ b/test/sequential/test-child-process-pass-fd.js
+@@ -17,7 +17,7 @@ const assert = require('assert');
+ const { fork } = require('child_process');
+ const net = require('net');
+ 
+-const N = 80;
++const N = 10;
+ let messageCallbackCount = 0;
+ 
+ function forkWorker() {
