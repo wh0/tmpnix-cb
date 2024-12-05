@@ -1,0 +1,13 @@
+diff --git a/tests/functional/derivation-advanced-attributes.sh b/tests/functional/derivation-advanced-attributes.sh
+index 6c0c76b..19f41ba 100755
+--- a/tests/functional/derivation-advanced-attributes.sh
++++ b/tests/functional/derivation-advanced-attributes.sh
+@@ -13,7 +13,7 @@ badExitCode=0
+ store="$TEST_ROOT/store"
+ 
+ for nixFile in derivation/*.nix; do
+-    drvPath=$(nix-instantiate --store "$store" --pure-eval --expr "$(< "$nixFile")")
++    drvPath=$(env -u NIX_STORE nix-instantiate --store "$store" --pure-eval --expr "$(< "$nixFile")")
+     testName=$(basename "$nixFile" .nix)
+     got="${store}${drvPath}"
+     expected="derivation/$testName.drv"
