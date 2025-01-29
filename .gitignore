@@ -9,3 +9,4 @@
 /.nix-defexpr
 /.nix-profile
 /.wget-hsts
+/notes/meta-syscall
