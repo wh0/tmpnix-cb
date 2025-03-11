@@ -1,6 +1,6 @@
 #!/bin/sh -eux
-NIX_ASSET=https://cdn.glitch.me/5a9fc653-d4ea-4f87-b41f-2015392bbd4a/nix-202502a.tar.gz?v=1740726597162
-NIX=/tmp/nix/store/zk4yrln3xsnh76zpmvrs85cifs5n6k43-nix-2.24.12
+NIX_ASSET=https://cdn.glitch.me/5a9fc653-d4ea-4f87-b41f-2015392bbd4a/nix-202503a.tar.gz?v=1741720576321
+NIX=/tmp/nix/store/8ipkg4xajyah2y5x1bm10yysbgij76z6-nix-2.24.12
 
 mkdir -p /tmp/nix-cache
 if [ ! -e ~/.cache/nix ]; then
